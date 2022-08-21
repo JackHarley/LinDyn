@@ -16,7 +16,7 @@ import (
 func main() {
 	godotenv.Load()
 
-	httpClient := http.Client{Timeout: 5 * time.Second}
+	httpClient := http.Client{Timeout: 60 * time.Second}
 	ipRetriever := myip.NewClient(httpClient)
 	linodeClient := linode.NewClient(httpClient, os.Getenv("LINODE_PERSONAL_ACCESS_TOKEN"))
 
